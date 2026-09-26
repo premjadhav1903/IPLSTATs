@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<title>Top 10 Batsmen</title>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:32px; }
+  h1 { text-align:center; font-weight:600; margin-bottom:28px; }
+  .chart-wrap { max-width:920px; margin:0 auto; background:#1e293b; padding:28px; border-radius:14px; box-shadow:0 4px 24px rgba(0,0,0,0.35); }
+</style>
+</head><body>
+<h1>Top 10 Batsmen</h1>
+<div class='chart-wrap'><canvas id='chart'></canvas></div>
+<script>
+const labels = ["V Kohli","RG Sharma","S Dhawan","DA Warner","KL Rahul","SK Raina","MS Dhoni","AM Rahane","AB de Villiers","SV Samson"];
+const data = [9346,7331,6769,6567,5828,5536,5439,5367,5181,5181];
+new Chart(document.getElementById('chart'), {
+  type: 'bar',
+  data: { labels: labels, datasets: [{ label: 'Runs', data: data, backgroundColor: ['#38bdf8','#818cf8','#f472b6','#fbbf24','#34d399','#f87171','#a78bfa','#22d3ee','#facc15','#4ade80'], borderColor: '#38bdf8', borderWidth: 1 }] },
+  options: { responsive: true, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } } }
+});
+</script>
+</body></html>

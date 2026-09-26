@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<title>Total Runs by Season</title>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:32px; }
+  h1 { text-align:center; font-weight:600; margin-bottom:28px; }
+  .chart-wrap { max-width:920px; margin:0 auto; background:#1e293b; padding:28px; border-radius:14px; box-shadow:0 4px 24px rgba(0,0,0,0.35); }
+</style>
+</head><body>
+<h1>Total Runs by Season</h1>
+<div class='chart-wrap'><canvas id='chart'></canvas></div>
+<script>
+const labels = ["2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2021","2022","2023","2024","2025","2026"];
+const data = [17937,16320,18864,21098,22453,22541,18909,17943,18862,18769,19901,19297,37974,24395,25563,25971,26040,27425];
+new Chart(document.getElementById('chart'), {
+  type: 'line',
+  data: { labels: labels, datasets: [{ label: 'Total Runs', data: data, backgroundColor: ['#38bdf8','#818cf8','#f472b6','#fbbf24','#34d399','#f87171','#a78bfa','#22d3ee','#facc15','#4ade80'], borderColor: '#38bdf8', borderWidth: 1 }] },
+  options: { responsive: true, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } } }
+});
+</script>
+</body></html>

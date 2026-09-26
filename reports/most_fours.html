@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'>
+<title>Most Fours</title>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; padding:32px; }
+  h1 { text-align:center; font-weight:600; margin-bottom:28px; }
+  .chart-wrap { max-width:920px; margin:0 auto; background:#1e293b; padding:28px; border-radius:14px; box-shadow:0 4px 24px rgba(0,0,0,0.35); }
+</style>
+</head><body>
+<h1>Most Fours</h1>
+<div class='chart-wrap'><canvas id='chart'></canvas></div>
+<script>
+const labels = ["V Kohli","S Dhawan","DA Warner","RG Sharma","AM Rahane","KL Rahul","SK Raina","G Gambhir","SA Yadav","RV Uthappa"];
+const data = [847,768,663,661,540,509,506,492,482,481];
+new Chart(document.getElementById('chart'), {
+  type: 'bar',
+  data: { labels: labels, datasets: [{ label: 'Fours', data: data, backgroundColor: ['#38bdf8','#818cf8','#f472b6','#fbbf24','#34d399','#f87171','#a78bfa','#22d3ee','#facc15','#4ade80'], borderColor: '#38bdf8', borderWidth: 1 }] },
+  options: { responsive: true, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } } }
+});
+</script>
+</body></html>
